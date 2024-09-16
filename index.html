@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARTESABANA - El Arte Hecho a Mano</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+</head>
+<body>
+    <div class="aviso" id="aviso">
+        <p>Aviso importante: ¡Descubre nuestras nuevas colecciones de artesanías Zenú!</p>
+    </div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Sobre Nosotros</a></li>
+                <li><a href="cuidado.html">Cuidado de Productos</a></li>
+                <li><a href="importancia.html">Importancia</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="intro">
+        <div class="texto">
+            <center> <h2>Bienvenido a ARTESABANA</h2></center>
+            
+            <p>Bienvenido a ARTESABANA, donde cada pieza de artesanía en caña flecha cuenta una historia ancestral de tradición y destreza. Nuestro objetivo es preservar y celebrar la rica herencia cultural del pueblo Zenú, ofreciendo productos únicos que reflejan el arte y la pasión de nuestros hábiles artesanos. Explora nuestra colección de sombreros, bolsos, monederos y más, y únete a nosotros en la celebración de la riqueza de la artesanía tradicional.</p>
+        </div>
+        <div class="imagen">
+            <center> <img src="img/logo.png" alt="Imagen de bienvenida"></center>
+            
+        </div>
+    </section>
+
+
+    
+    <main>
+        <center>
+            <h1>Productos En Caña Flecha </h1>
+        </center>
+        <section class="products">
+            <h2>Productos en Promoción</h2>
+            <div class="product" data-id="1" data-name="Producto 1" data-price="50" data-section="electronics">
+                <img src="img/slider-2.png" alt="Producto 1">
+                <h3>Producto 1</h3>
+                <p>Descripción del Producto 1.</p>
+                <span class="price">450000</span>   
+            </div>
+
+            <div class="product" data-id="2" data-name="Producto 2" data-price="30" data-section="fashion">
+                <img src="img/bolso.jpg" alt="Producto 2">
+                <h3>Producto 2</h3>
+                <p>Descripción del Producto 2.</p>
+                <span class="price">$30</span>
+            </div>
+
+            <div class="product" data-id="2" data-name="Producto 2" data-price="30" data-section="fashion">
+                <img src="img/slider-4.png" alt="Producto 2">
+                <h3>Producto 2</h3>
+                <p>Descripción del Producto 2.</p>
+                <span class="price">$30</span>
+            </div>
+
+            <div class="product" data-id="3" data-name="Producto 3" data-price="45" data-section="home">
+                <img src="img/arete.jpg" alt="Producto 3">
+                <h3>Producto 3</h3>
+                <p>Descripción del Producto 3.</p>
+                <span class="price">$45</span>
+            </div>
+            <!-- Agrega más productos según sea necesario -->
+        </section>
+
+
+
+    <script>
+        // Variables globales
+        let cart = [];
+        let total = 0;
+
+        // Función para agregar productos al carrito
+        function addToCart(productName, productPrice) {
+            cart.push({ name: productName, price: productPrice });
+            total += productPrice;
+            updateCart();
+        }
+
+        // Actualiza la visualización del carrito
+        function updateCart() {
+            const cartItems = document.getElementById('cartItems');
+            cartItems.innerHTML = ''; // Limpiar el carrito
+
+            cart.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = `${item.name} - $${item.price}`;
+                cartItems.appendChild(li);
+            });
+
+            document.getElementById('cartTotal').textContent = total;
+        }
+
+       
+    </script>
+
+    <section id="pueblo-zenu">
+        <center>
+            <h2>Pueblo Zenú</h2>
+            <img src="img/mapa.png" alt="">
+            <p>El pueblo Zenú, es un pueblo indígena de Colombia, su territorio ancestral está constituido por los valles del río Sinú, el San Jorge y el litoral Caribe en los alrededores del Golfo de Morrosquillo, actualmente en los departamentos colombianos de Córdoba y Sucre.</p>
+            <br>
+            <h2>La Caña Flecha</h2>
+            <img src="img/caña.jpg" alt="" style="width: 500px; height: auto;">
+            <p>La caña flecha tiene su origen en los pueblos zenú de Colombia. Los sinúes o zenúes son un pueblo amerindio cuyo territorio ancestral está constituido por los valles del río Sinú y el San Jorge y el litoral Caribe en los alrededores del Golfo de Morrosquillo, en los actuales departamentos colombianos de Córdoba y Sucre, donde destacamos las manos de obras calificadas por parte de nuestros artesanos de Tuchín, Córdoba.</p>
+        </center>
+        
+    </section>
+    
+    </main>
+
+
+    <footer>
+        <p>© 2024 ARTESABANA</p>
+    </footer>
+    <button id="scroll-top">↑</button>
+
+    <a href="https://wa.me/1234567890" class="whatsapp-icon" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      
+    <script src="script.js"></script>
+</body>
+</html>

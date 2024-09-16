@@ -1,0 +1,294 @@
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; /* Fondo blanco */
+}
+
+/* Barra de aviso */
+.aviso {
+    background-color: #d1bfa7; /* Color tierra */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed; /* Fijo en la parte superior */
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Asegura que esté por encima del contenido */
+    overflow: hidden;
+}
+
+.aviso p {
+    display: inline-block;
+    white-space: nowrap;
+    animation: moverTexto 10s linear infinite;
+}
+
+@keyframes moverTexto {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Estilo para el encabezado */
+header {
+    background-color: #d1bfa7; /* Color tierra */
+    padding: 10px 0;
+    position: relative; /* El header ya no es sticky */
+    margin-top: 60px; /* Espacio para la barra de aviso */
+}
+
+/* Estilos para la navegación */
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 18px; /* Tamaño de fuente para los enlaces de navegación */
+}
+
+nav ul li a:hover {
+    color: #ff6f61; /* Color al pasar el mouse (naranja cálido) */
+}
+
+/* Sección de introducción */
+#intro {
+    display: flex;
+    flex-direction: column; /* Cambio a columna en pantallas pequeñas */
+    padding: 20px;
+}
+
+.texto {
+    width: 100%; /* Ajustar al ancho completo */
+    margin-right: 0; /* Eliminar margen derecho en pantallas pequeñas */
+    font-family: 'Georgia', serif; /* Fuente estilizada para textos largos */
+}
+
+.texto h2 {
+    font-size: 2.5em; /* Tamaño mayor para el título */
+    color: #4a2c2a; /* Color más oscuro para mayor contraste */
+}
+
+.texto p {
+    font-size: 1.2em; /* Tamaño de fuente mayor para facilitar la lectura */
+    color: #5b3a29; /* Color tierra más cálido */
+}
+
+.imagen {
+    width: 100%; /* Ajustar al ancho completo */
+}
+
+.imagen img {
+    width: 100%;
+    max-width: 30%; /* Ajustar al ancho completo del contenedor */
+    height: auto;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilo para el contenido principal */
+main {
+    padding: 20px;
+}
+
+main section {
+    margin: 40px 0; /* Espaciado entre secciones */
+}
+
+main h2 {
+    font-size: 2em; /* Tamaño de fuente mayor para los subtítulos */
+    color: #4a2c2a; /* Color oscuro para contraste */
+}
+
+main p {
+    font-size: 1.1em; /* Tamaño de fuente para el texto de párrafos */
+    color: #5b3a29; /* Color tierra más cálido */
+}
+
+/* Productos */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.product {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.product img {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
+    height: 200px; /* Tamaño fijo para la altura de la imagen */
+    object-fit: cover; /* Mantiene la imagen cubierta en el contenedor sin distorsión */
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+    border-radius: 8px 8px 0 0;
+}
+
+.product h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.product .price {
+    color: #333;
+    font-weight: bold;
+}
+
+.product .add-to-cart {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.product .add-to-cart:hover {
+    background-color: #218838;
+    color: #fff;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+}
+
+/* Estilo para el pie de página */
+footer {
+    background-image: url('img/slider-2.png'); /* Ruta de la imagen de fondo */
+    background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    color: white;
+    text-align: center;
+    padding: 20px 0; /* Ajusta el espacio interno */
+    width: 100%;
+    position: relative; /* Cambiado de fixed a relative */
+    bottom: 0; /* Asegura que esté al final del contenido */
+}
+
+/* Estilo general del botón de desplazamiento hacia arriba */
+#scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff6f61; /* Color del botón (naranja cálido) */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 18px;
+    display: none; /* Oculto por defecto */
+}
+
+#scroll-top:hover {
+    background-color: #e65c4f; /* Color más oscuro al pasar el mouse */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    header {
+        padding: 10px;
+    }
+    
+    nav ul {
+        padding: 0;
+    }
+    
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+    
+    #intro {
+        flex-direction: column; /* Cambio a columna en pantallas pequeñas */
+    }
+
+    .texto, .imagen {
+        width: 100%; /* Ajustar al ancho completo */
+    }
+
+    .productos {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajustar tamaño de columnas */
+    }
+
+    .product img {
+        height: auto; /* Ajustar altura automática */
+    }
+}
+
+@media (max-width: 480px) {
+    .texto h2 {
+        font-size: 2em; /* Reducir tamaño de fuente para títulos */
+    }
+    
+    .texto p {
+        font-size: 1em; /* Reducir tamaño de fuente para párrafos */
+    }
+    
+    .product h3 {
+        font-size: 1em; /* Reducir tamaño de fuente para los nombres de productos */
+    }
+    
+    .product .price {
+        font-size: 1em; /* Reducir tamaño de fuente para precios */
+    }
+}
+
+
+
+.whatsapp-icon {
+    position: fixed;
+    bottom: 100px; /* Ajusta la distancia desde el fondo */
+    right: 20px; /* Ajusta la distancia desde el borde derecho */
+    background-color: #25D366; /* Color de fondo de WhatsApp */
+    color: #fff; /* Color del ícono */
+    border-radius: 50%; /* Hace el ícono circular */
+    padding: 10px; /* Tamaño del área clickeable */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra del ícono */
+    font-size: 24px; /* Tamaño del ícono */
+    text-align: center; /* Centra el ícono */
+    z-index: 1000; /* Asegura que el ícono esté por encima de otros elementos */
+    transition: background-color 0.3s; /* Transición suave para el cambio de color */
+  }
+  
+  .whatsapp-icon:hover {
+    background-color: #128C7E; /* Color de fondo al pasar el ratón */
+  }
+  
